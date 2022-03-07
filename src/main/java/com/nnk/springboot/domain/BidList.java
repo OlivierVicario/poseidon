@@ -8,29 +8,44 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
+@DynamicUpdate
 @Table(name = "bidlist")
 public class BidList {
     // TODO: Map columns in data table BIDLIST with corresponding java fields
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "BidListId")
-	private int BidListId;
+	private Integer bidListId;
+	
+	@NotBlank( message="Please enter an account")
 	@Column(name = "account")
 	private String account;
+	
 	@Column(name = "ask")
-	private double ask;
+	private Double ask;
+	
 	@Column(name = "askQuantity")
-	private double askQuantity;
+	private Double askQuantity;
+	
 	@Column(name = "benchmark")
 	private String benchmark;
+	
 	@Column(name = "bid")
-	private double bid;
+	private Double bid;
+	
 	@Column(name = "bidListDate")
 	private Timestamp bidListDate;
+	@Max(1000)
+	@Min(1)
 	@Column(name = "bidQuantity")
-	private double bidQuantity;
+	private Double bidQuantity;
 	@Column(name = "book")
 	private String book;
 	@Column(name = "commentary")
@@ -57,6 +72,7 @@ public class BidList {
 	private String status;
 	@Column(name = "trader")
 	private String trader;
+	@NotBlank( message="Please enter a type")
 	@Column(name = "type")
 	private String type;
 	
@@ -65,19 +81,19 @@ public class BidList {
 
 
 // TODO Auto-generated constructor stub
-	public BidList(String account, String type, double bidQuantity) {
+	public BidList(String account, String type, Double bidQuantity) {
 		super();
 		this.account = account;
 		this.bidQuantity = bidQuantity;
 		this.type = type;
 	}
 
-	public int getBidListId() {
-		return this.BidListId;
+	public Integer getBidListId() {
+		return this.bidListId;
 	}
 
-	public void setBidListId(int bidListId) {
-		this.BidListId = bidListId;
+	public void setBidListId(Integer bidListId) {
+		this.bidListId = bidListId;
 	}
 
 	public String getAccount() {
@@ -88,19 +104,19 @@ public class BidList {
 		this.account = account;
 	}
 
-	public double getAsk() {
+	public Double getAsk() {
 		return this.ask;
 	}
 
-	public void setAsk(double ask) {
+	public void setAsk(Double ask) {
 		this.ask = ask;
 	}
 
-	public double getAskQuantity() {
+	public Double getAskQuantity() {
 		return this.askQuantity;
 	}
 
-	public void setAskQuantity(double askQuantity) {
+	public void setAskQuantity(Double askQuantity) {
 		this.askQuantity = askQuantity;
 	}
 
@@ -112,11 +128,11 @@ public class BidList {
 		this.benchmark = benchmark;
 	}
 
-	public double getBid() {
+	public Double getBid() {
 		return this.bid;
 	}
 
-	public void setBid(double bid) {
+	public void setBid(Double bid) {
 		this.bid = bid;
 	}
 
@@ -128,11 +144,11 @@ public class BidList {
 		this.bidListDate = bidListDate;
 	}
 
-	public double getBidQuantity() {
+	public Double getBidQuantity() {
 		return this.bidQuantity;
 	}
 
-	public void setBidQuantity(double bidQuantity) {
+	public void setBidQuantity(Double bidQuantity) {
 		this.bidQuantity = bidQuantity;
 	}
 

@@ -10,7 +10,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-6">
-			<a href="/bidList/list">Bid List</a>&nbsp;|&nbsp;
+			<a href="/curvePoint/list">Bid List</a>&nbsp;|&nbsp;
 			<a href="/curvePoint/list">Curve Points</a>&nbsp;|&nbsp;
 			<a href="/rating/list">Ratings</a>&nbsp;|&nbsp;
 			<a href="/trade/list">Trade</a>&nbsp;|&nbsp;
@@ -30,7 +30,7 @@
 			<thead>
 				<tr>
 					<th>Id</th>
-					<th>CurvePointId</th>
+					<th>CurveId</th>
 					<th>Term</th>
 					<th>Value</th>
 					<th>Action</th>
@@ -38,6 +38,20 @@
 			</thead>
 			<tbody>
 			<!-- TODO: Show all CurvePoint to the table, the action column will have Edit & Delete buttons -->
+			<tr th:each="curvePoint: ${curvePoints}">
+						<td th:text="${curvePoint.id}">User ID</td>
+						<td th:text="${curvePoint.curveId}">E-mail</td>
+						<td th:text="${curvePoint.term}">First Name</td>
+						<td th:text="${curvePoint.value}">Last Name</td>
+						<td>
+							<form th:action="@{/curvePoint/update/{id}(id=${curvePoint.id})}" method="GET">
+								<input type="submit" value="Edit" />
+							</form>
+							<form th:action="@{/curvePoint/delete/{id}(id=${curvePoint.id})}" method="GET">
+								<input type="submit" value="Delete" />
+							</form>
+						</td>
+					</tr>
 			</tbody>
 		</table>
 	</div>

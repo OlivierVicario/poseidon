@@ -2,11 +2,13 @@ package com.nnk.springboot.domain;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -15,35 +17,38 @@ public class Trade {
     // TODO: Map columns in data table TRADE with corresponding java fields
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int tradeId;
-
+	@Column(name = "tradeId")
+	private Integer tradeId;
+	@NotNull( message="Please enter an account")
+	@Column(name = "account")
 	private String account;
-
+	@Column(name = "benchmark")
 	private String benchmark;
-
+	@Column(name = "book")
 	private String book;
-
-	private double buyPrice;
-
-	private double buyQuantity;
-
+	@Column(name = "buyPrice")
+	private Double buyPrice;
+	@Column(name = "buyQuantity")
+	private Double buyQuantity;
+	@Column(name = "creationDate")
 	private Timestamp creationDate;
-
+	@Column(name = "creationName")
 	private String creationName;
-
+	@Column(name = "dealName")
 	private String dealName;
-
+	@NotNull( message="Please enter a type")
+	@Column(name = "dealType")
 	private String dealType;
-
+	@Column(name = "revisionDate")
 	private Timestamp revisionDate;
-
+	@Column(name = "revisionName")
 	private String revisionName;
-
+	@Column(name = "security")
 	private String security;
-
-	private double sellPrice;
-
-	private double sellQuantity;
+	@Column(name = "sellPrice")
+	private Double sellPrice;
+	@Column(name = "sellQuantity")
+	private Double sellQuantity;
 
 	public String getSide() {
 		return side;
@@ -115,11 +120,11 @@ public class Trade {
 	}
 
 
-	public int getTradeId() {
+	public Integer getTradeId() {
 		return this.tradeId;
 	}
 
-	public void setTradeId(int tradeId) {
+	public void setTradeId(Integer tradeId) {
 		this.tradeId = tradeId;
 	}
 
@@ -147,19 +152,19 @@ public class Trade {
 		this.book = book;
 	}
 
-	public double getBuyPrice() {
+	public Double getBuyPrice() {
 		return this.buyPrice;
 	}
 
-	public void setBuyPrice(double buyPrice) {
+	public void setBuyPrice(Double buyPrice) {
 		this.buyPrice = buyPrice;
 	}
 
-	public double getBuyQuantity() {
+	public Double getBuyQuantity() {
 		return this.buyQuantity;
 	}
 
-	public void setBuyQuantity(double buyQuantity) {
+	public void setBuyQuantity(Double buyQuantity) {
 		this.buyQuantity = buyQuantity;
 	}
 
@@ -219,19 +224,19 @@ public class Trade {
 		this.security = security;
 	}
 
-	public double getSellPrice() {
+	public Double getSellPrice() {
 		return this.sellPrice;
 	}
 
-	public void setSellPrice(double sellPrice) {
+	public void setSellPrice(Double sellPrice) {
 		this.sellPrice = sellPrice;
 	}
 
-	public double getSellQuantity() {
+	public Double getSellQuantity() {
 		return this.sellQuantity;
 	}
 
-	public void setSellQuantity(double sellQuantity) {
+	public void setSellQuantity(Double sellQuantity) {
 		this.sellQuantity = sellQuantity;
 	}
 }

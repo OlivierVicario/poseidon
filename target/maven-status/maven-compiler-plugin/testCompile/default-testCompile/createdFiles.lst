@@ -1,6 +1,10 @@
 com\nnk\springboot\PasswordEncodeTest.class
 com\nnk\springboot\BidTests.class
-com\nnk\springboot\CurvePointTests.class
 com\nnk\springboot\RatingTests.class
+com\nnk\springboot\BidListControllerTest.class
+com\nnk\springboot\CurvePointTests.class
 com\nnk\springboot\TradeTests.class
+com\nnk\springboot\BidListServiceTest.class
 com\nnk\springboot\RuleTests.class
+com\nnk\springboot\CurvePointControllerTest.class
+com\nnk\springboot\CurvePointServiceTest.class

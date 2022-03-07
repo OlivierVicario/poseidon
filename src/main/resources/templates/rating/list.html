@@ -39,6 +39,22 @@
 			</thead>
 			<tbody>
 			<!-- TODO: Show all Rating to the table, the Action column will have Edit & Delete buttons -->
+			<tr th:each="rating: ${ratings}">
+						<td th:text="${rating.id}">User ID</td>
+						<td th:text="${rating.moodysRating}">E-mail</td>
+						<td th:text="${rating.sandPRating}">First Name</td>
+						<td th:text="${rating.fitchRating}">Last Name</td>
+						<td th:text="${rating.orderNumber}">Last Name</td>
+						
+						<td>
+							<form th:action="@{/rating/update/{id}(id=${rating.id})}" method="GET">
+								<input type="submit" value="Edit" />
+							</form>
+							<form th:action="@{/rating/delete/{id}(id=${rating.id})}" method="GET">
+								<input type="submit" value="Delete" />
+							</form>
+						</td>
+					</tr>
 			</tbody>
 		</table>
 	</div>

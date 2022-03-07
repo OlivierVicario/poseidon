@@ -8,48 +8,53 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "curvepoint")
 public class CurvePoint {
-	// TODO: Map columns in data table CURVEPOINT with corresponding java fields
+	// TODO: Map columns in data table CURVEPOLong with corresponding java fields
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Id")
-	private int id;
+	private Integer id;
 
 	@Column(name = "asOfDate")
 	private Timestamp asOfDate;
 
 	@Column(name = "creationDate")
 	private Timestamp creationDate;
-
+	@NotNull( message="Please enter a curve id")
 	@Column(name = "CurveId")
-	private int curveId;
-
+	private Integer curveId;
+	@Max(1000)
+	@Min(1)
 	@Column(name = "term")
-	private double term;
-
+	private Double term;
+	@Max(1000)
+	@Min(1)
 	@Column(name = "value")
-	private double value;
+	private Double value;
 
 	public CurvePoint() {
 	}
 
 // TODO Auto-generated constructor stub
-	public CurvePoint(int curveId, double term, double value) {
+	public CurvePoint(Integer curveId, Double term, Double value) {
 		super();
 		this.curveId = curveId;
 		this.term = term;
 		this.value = value;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -69,27 +74,27 @@ public class CurvePoint {
 		this.creationDate = creationDate;
 	}
 
-	public int getCurveId() {
+	public Integer getCurveId() {
 		return this.curveId;
 	}
 
-	public void setCurveId(int curveId) {
+	public void setCurveId(Integer curveId) {
 		this.curveId = curveId;
 	}
 
-	public double getTerm() {
+	public Double getTerm() {
 		return this.term;
 	}
 
-	public void setTerm(double term) {
+	public void setTerm(Double term) {
 		this.term = term;
 	}
 
-	public double getValue() {
+	public Double getValue() {
 		return this.value;
 	}
 
-	public void setValue(double value) {
+	public void setValue(Double value) {
 		this.value = value;
 	}
 }

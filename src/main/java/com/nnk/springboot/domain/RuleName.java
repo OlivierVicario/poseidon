@@ -1,10 +1,12 @@
 package com.nnk.springboot.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "rulename")
@@ -12,18 +14,21 @@ public class RuleName {
     // TODO: Map columns in data table RULENAME with corresponding java fields
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "Id")
 	private int id;
-
+	@NotNull( message="Please enter a description")
+	@Column(name = "description")
 	private String description;
-
+	@Column(name = "json")
 	private String json;
-
+	@NotNull( message="Please enter a name")
+	@Column(name = "name")
 	private String name;
-
+	@Column(name = "sqlPart")
 	private String sqlPart;
-
+	@Column(name = "sqlStr")
 	private String sqlStr;
-
+	@Column(name = "template")
 	private String template;
 
 	public RuleName() {
