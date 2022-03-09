@@ -36,7 +36,7 @@ public class Trade {
 	private String creationName;
 	@Column(name = "dealName")
 	private String dealName;
-	@NotNull( message="Please enter a type")
+	//@NotNull( message="Please enter a type")
 	@Column(name = "dealType")
 	private String dealType;
 	@Column(name = "revisionDate")

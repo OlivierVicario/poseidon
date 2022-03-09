@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,59 +21,112 @@ import com.nnk.springboot.service.CurvePointService;
 
 @Controller
 public class CurvePointController {
-    // TODO: Inject Curve Point service
+	private static final Logger LOGGER = LoggerFactory.getLogger(CurvePointController.class);
+
+	// TODO: Inject Curve Point service
 	@Autowired
 	CurvePointService curvePointService;
-    @RequestMapping("/curvePoint/list")
-    public String home(Model model)
-    {
-        // TODO: find all Curve Point, add to model
-    	List<CurvePoint> CurvePoints = curvePointService.findAllCurvePoints();
-		model.addAttribute("curvePoints", CurvePoints);
-        return "curvePoint/list";
-    }
 
-    @GetMapping("/curvePoint/add")
-    public String addBidForm(CurvePoint bid) {
-        return "curvePoint/add";
-    }
+	@RequestMapping("/curvePoint/list")
+	public String home(Model model) {
+		try {
+			LOGGER.info("begin home");
+			// TODO: find all Curve Point, add to model
+			List<CurvePoint> CurvePoints = curvePointService.findAllCurvePoints();
+			model.addAttribute("curvePoints", CurvePoints);
+			return "curvePoint/list";
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		} finally {
+			LOGGER.info("end home");
+		}
+		return null;
+	}
 
-    @PostMapping("/curvePoint/validate")
-    public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return Curve list
-    	if (result.hasErrors()) {
-            return "curvePoint/add";
-        } else {
-        	curvePointService.saveCurvePoint(curvePoint);
-        }
-        return "curvePoint/add";
-    }
+	@GetMapping("/curvePoint/add")
+	public String addCurvePointForm(CurvePoint bid) {
+		try {
+			LOGGER.info("begin addCurvePointForm");
 
-    @GetMapping("/curvePoint/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get CurvePoint by Id and to model then show to the form
-    	Optional<CurvePoint> optCurvePoint = curvePointService.getCurvePointById(id);
-		CurvePoint curvePoint = optCurvePoint.get();
-		model.addAttribute("curvePoint", curvePoint);
-        return "curvePoint/update";
-    }
+			return "curvePoint/add";
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		} finally {
+			LOGGER.info("end addCurvePointForm");
+		}
+		return null;
+	}
 
-    @PostMapping("/curvePoint/update/{id}")
-    public String updateBid(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint,
-                             BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Curve and return Curve list
-		if (result.hasErrors()) {
-            return "curvePoint/update/{id}";
-        } else {
-        	curvePointService.updateCurvePoint(curvePoint);
-        }
-        return "redirect:/curvePoint/list";
-    }
+	@PostMapping("/curvePoint/validate")
+	public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
 
-    @GetMapping("/curvePoint/delete/{id}")
-    public String deleteCurvePoint(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Curve by Id and delete the Curve, return to Curve list
-    	curvePointService.deleteCurvePoint(id);
-        return "redirect:/curvePoint/list";
-    }
+		try {
+			LOGGER.info("begin validate");
+			// TODO: check data valid and save to db, after saving return Curve list
+			if (result.hasErrors()) {
+				return "curvePoint/add";
+			} else {
+				curvePointService.saveCurvePoint(curvePoint);
+			}
+			return "curvePoint/add";
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		} finally {
+			LOGGER.info("end validate");
+		}
+		return null;
+	}
+
+	@GetMapping("/curvePoint/update/{id}")
+	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
+		try {
+			LOGGER.info("begin showUpdateForm");
+			// TODO: get CurvePoint by Id and to model then show to the form
+			Optional<CurvePoint> optCurvePoint = curvePointService.getCurvePointById(id);
+			CurvePoint curvePoint = optCurvePoint.get();
+			model.addAttribute("curvePoint", curvePoint);
+			return "curvePoint/update";
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		} finally {
+			LOGGER.info("end showUpdateForm");
+		}
+		return null;
+	}
+
+	@PostMapping("/curvePoint/update/{id}")
+	public String updateCurvePoint(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint, BindingResult result,
+			Model model) {
+		try {
+			LOGGER.info("begin updateCurvePoint");
+			// TODO: check required fields, if valid call service to update Curve and return
+			// Curve list
+			if (result.hasErrors()) {
+				return "curvePoint/update/{id}";
+			} else {
+				curvePointService.updateCurvePoint(curvePoint);
+			}
+			return "redirect:/curvePoint/list";
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		} finally {
+			LOGGER.info("end updateCurvePoint");
+		}
+		return null;
+	}
+
+	@GetMapping("/curvePoint/delete/{id}")
+	public String deleteCurvePoint(@PathVariable("id") Integer id, Model model) {
+		try {
+			LOGGER.info("begin deleteCurvePoint");
+			// TODO: Find Curve by Id and delete the Curve, return to Curve list
+			curvePointService.deleteCurvePoint(id);
+			return "redirect:/curvePoint/list";
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		} finally {
+			LOGGER.info("end deleteCurvePoint");
+		}
+		return null;
+	}
 }
