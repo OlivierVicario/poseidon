@@ -2,6 +2,8 @@ package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.repositories.UserRepository;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ public class LoginController {
 	private UserRepository userRepository;
 
 	@GetMapping("login")
+	@RolesAllowed("USER")
 	public ModelAndView login() {
 		try {
 			LOGGER.info("begin login");
@@ -34,6 +37,7 @@ public class LoginController {
 	}
 
 	@GetMapping("secure/article-details")
+	@RolesAllowed("ADMIN")
 	public ModelAndView getAllUserArticles() {
 		try {
 			LOGGER.info("begin getAllUserArticles");
@@ -69,4 +73,5 @@ public class LoginController {
 
 		return null;
 	}
+	
 }
