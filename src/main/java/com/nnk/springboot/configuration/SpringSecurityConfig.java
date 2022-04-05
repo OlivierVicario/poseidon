@@ -20,6 +20,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	public MyUserDetailsService userDetailsService() {
 		return new MyUserDetailsService();
 	}
+
 	@Bean
 	public DaoAuthenticationProvider daoAuthenticationProvider() {
 		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -28,28 +29,28 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		return authProvider;
 	}
-	
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-		.withUser("springUser").password(passwordEncoder().encode("spring123")).roles("USER")
-		.and()
-		.withUser("springAdmin").password(passwordEncoder().encode("admin123")).roles("ADMIN", "USER");
-		
+		auth.inMemoryAuthentication().withUser("springUser").password(passwordEncoder().encode("spring123"))
+				.roles("USER").and().withUser("springAdmin").password(passwordEncoder().encode("admin123"))
+				.roles("ADMIN", "USER");
+
 		auth.authenticationProvider(daoAuthenticationProvider());
 	}
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/secure/**").hasRole("ADMIN")
-				.antMatchers("/**").hasRole("USER")
+		http.authorizeRequests().antMatchers("/secure/**").hasRole("ADMIN").antMatchers("/**").hasRole("USER")
 				.anyRequest().authenticated()
 				.and()
-				.formLogin()
+				.formLogin().defaultSuccessUrl("/bidList/list").permitAll()
+				.and()
+				.oauth2Login()
 				.and()
 				.logout().logoutSuccessUrl("/").permitAll();
 	}
-	
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
