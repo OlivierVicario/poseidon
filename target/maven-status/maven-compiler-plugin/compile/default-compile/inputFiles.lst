@@ -1,5 +1,6 @@
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\User.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\RuleNameController.java
+C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\configuration\SpringSecurityConfig.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\service\RuleNameService.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\BidListRepository.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\RuleName.java
@@ -9,6 +10,7 @@ C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\service\RatingService.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\service\TradeService.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\service\UserService.java
+C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\service\MyUserDetailsService.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\RatingController.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\BidList.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\Application.java
@@ -20,6 +22,7 @@ C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\UserController.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\CurvePointRepository.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\service\CurvePointService.java
+C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\MyUserPrincipal.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\Rating.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\TradeRepository.java
 C:\Users\olvic\Documents\OCjava\projet 7\sts_workspace1\JavaDA_PROJECT7_RESTAPI-master\JavaDA_PROJECT7_RESTAPI-master\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\UserRepository.java

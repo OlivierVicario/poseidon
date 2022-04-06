@@ -28,7 +28,7 @@ public class HomeController {
 	public String adminHome(Model model) {
 		try {
 			LOGGER.info("begin adminHome");
-			return "redirect:/bidList/list";
+			return "redirect:secure/article-details";
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage());
 		} finally {
@@ -38,4 +38,17 @@ public class HomeController {
 		return null;
 	}
 
+	@RequestMapping("/home")
+	public String home1(Model model) {
+		try {
+			LOGGER.info("begin home");
+			return "home";
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		} finally {
+			LOGGER.info("end home");
+		}
+
+		return null;
+	}
 }

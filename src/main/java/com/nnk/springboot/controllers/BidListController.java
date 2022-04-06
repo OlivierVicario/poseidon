@@ -43,7 +43,7 @@ public class BidListController {
 	}
 
 	@GetMapping("/bidList/add")
-	public String addBidForm(BidList bid) {
+	public String addBidForm(@Valid BidList bid, BindingResult bindingResult) {
 		try {
 			LOGGER.info("begin addBidForm");
 		return "bidList/add";

@@ -74,10 +74,5 @@ public class LoginController {
 		return null;
 	}
 	
-	@GetMapping("app-logout")
-	public String showLoginForm() {
-		return "login";
-	}
-	
 	
 }

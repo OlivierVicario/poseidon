@@ -15,26 +15,11 @@
 <body>
 
 	<div class="container">
-		<div class="row">
-			<div class="col-6">
-				<a href="/bidList/list">Bid List</a>&nbsp;|&nbsp; <a
-					href="/curvePoint/list">Curve Points</a>&nbsp;|&nbsp; <a
-					href="/rating/list">Ratings</a>&nbsp;|&nbsp; <a href="/trade/list">Trade</a>&nbsp;|&nbsp;
-				<a href="/ruleName/list">Rule</a>
-			</div>
-
-			<div class="col-6 text-right">
-				Logged in user: <b th:inline="text" class="user">
-					[[${#httpServletRequest.remoteUser}]] </b>
-				<form th:action="@{/app-logout}" method="GET">
-					<input type="submit" value="Logout" />
-				</form>
-			</div>
-		</div>
+		<section class="content-header" th:replace="fragments/header"></section>
 	</div>
 	<div class="row">
 		<div class="col-6 text-right">
-			<img src="logo.png" width="388" height="285" alt="Site logo">
+			<img src="/logo.png" width="388" height="285" alt="Site logo">
 		</div>
 	</div>
 	<div class="row">
@@ -47,8 +32,8 @@
 		<div class="col-6 text-right">
 		</br>
 			<p>
-				<a href="/login">Login</a> or create one <a
-					href="secure/article-details">User management</a>
+ 				<a href="/login">Login</a> <!--or create one <a -->
+<!-- 					href="secure/article-details">User management</a> -->
 			</p>
 		</div>
 	</div>

@@ -48,7 +48,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 				.oauth2Login()
 				.and()
-				.logout().logoutSuccessUrl("/").permitAll();
+				.logout().logoutSuccessUrl("/home").permitAll();
+
 	}
 
 	@Bean

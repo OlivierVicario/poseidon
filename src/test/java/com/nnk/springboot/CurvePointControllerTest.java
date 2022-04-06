@@ -1,6 +1,8 @@
 package com.nnk.springboot;
 
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
@@ -39,6 +41,13 @@ public class CurvePointControllerTest {
 	@Test
 	public void shouldUpdateCurvePoint() throws Exception {
 		this.mockMvc.perform(get("/curvePoint/update/22")).andExpect(status().isOk());
+				
+	}
+	
+	@WithMockUser("user")
+	@Test
+	public void shouldValidateBidList() throws Exception {
+		this.mockMvc.perform(post("/curvePoint/validate").with(csrf())).andExpect(status().isOk());
 				
 	}
 	/*

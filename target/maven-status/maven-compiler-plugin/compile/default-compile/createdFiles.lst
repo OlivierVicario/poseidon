@@ -4,8 +4,10 @@ com\nnk\springboot\service\TradeService.class
 com\nnk\springboot\controllers\CurvePointController.class
 com\nnk\springboot\Application.class
 com\nnk\springboot\controllers\RatingController.class
+com\nnk\springboot\domain\MyUserPrincipal.class
 com\nnk\springboot\domain\BidList.class
 com\nnk\springboot\controllers\LoginController.class
+com\nnk\springboot\service\MyUserDetailsService.class
 com\nnk\springboot\domain\Trade.class
 com\nnk\springboot\service\RatingService.class
 com\nnk\springboot\repositories\UserRepository.class
@@ -19,6 +21,7 @@ com\nnk\springboot\repositories\TradeRepository.class
 com\nnk\springboot\repositories\BidListRepository.class
 com\nnk\springboot\service\CurvePointService.class
 com\nnk\springboot\domain\Rating.class
+com\nnk\springboot\configuration\SpringSecurityConfig.class
 com\nnk\springboot\controllers\RuleNameController.class
 com\nnk\springboot\service\UserService.class
 com\nnk\springboot\controllers\BidListController.class
