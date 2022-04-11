@@ -11,18 +11,19 @@
     <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
   </head>
   <body>
-  <h1>Custom login page</h1>
+  <h1>Poseidon login page</h1>
      <div class="container">
-      <form class="form-signin" method="post" th:action="@{/login}">
+      <form class="form-signin" method="post" th:action="@{/login}" th:object="${user}">
         <h2 class="form-signin-heading">Please sign in</h2>
         <p>
           <label for="username" class="sr-only">Username</label>
           <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
         </p>
-        <p>
-          <label for="password" class="sr-only">Password</label>
-          <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-        </p>
+			<p>
+				<label for="password" class="sr-only">Password</label> 
+				<input type="password" id="password" name="password" class="form-control" placeholder="Password">
+          </p>
+        
 <input name="_csrf" type="hidden" value="f0102704-fe08-4f1f-849f-3add7c0e7548" />
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>

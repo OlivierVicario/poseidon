@@ -22,7 +22,7 @@ import com.nnk.springboot.service.RatingService;
 @Controller
 public class RatingController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RatingController.class);
-	// TODO: Inject Rating service
+	
 	@Autowired
 	RatingService ratingService;
 
@@ -30,7 +30,7 @@ public class RatingController {
 	public String home(Model model) {
 		try {
 			LOGGER.info("begin home");
-			// TODO: find all Rating, add to model
+			
 			List<Rating> ratings = ratingService.findAllRatings();
 			model.addAttribute("ratings", ratings);
 			return "rating/list";
@@ -62,7 +62,7 @@ public class RatingController {
 	public String validate(@Valid Rating rating, BindingResult result, Model model) {
 		try {
 			LOGGER.info("begin validate");
-			// TODO: check data valid and save to db, after saving return Rating list
+			
 			if (result.hasErrors()) {
 				return "rating/add";
 			} else {
@@ -82,7 +82,7 @@ public class RatingController {
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		try {
 			LOGGER.info("begin showUpdateForm");
-			// TODO: get Rating by Id and to model then show to the form
+			
 			Optional<Rating> optRating = ratingService.getRatingById(id);
 			Rating rating = optRating.get();
 			model.addAttribute("rating", rating);

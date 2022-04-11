@@ -1,4 +1,4 @@
-package com.nnk.springboot;
+package com.nnk.springboot.domain;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

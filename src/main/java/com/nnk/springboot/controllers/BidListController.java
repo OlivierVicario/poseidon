@@ -79,7 +79,7 @@ public class BidListController {
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		try {
 			LOGGER.info("begin showUpdateForm");
-		// TODO: get Bid by Id and to model then show to the form
+
 		Optional<BidList> optBidList = bidListService.getBidsListById(id);
 		BidList bidList = optBidList.get();
 		model.addAttribute("bidList", bidList);
@@ -97,8 +97,8 @@ public class BidListController {
 	public String updateBid(@PathVariable("id") Integer id, @Valid BidList bidList, BindingResult result, Model model) {
 		try {
 			LOGGER.info("begin updateBid");
-		// TODO: check required fields, if valid call service to update Bid and return
-		// list Bid
+
+
 		if (result.hasErrors()) {
             return "bidList/update/{id}";
         } else {
@@ -118,7 +118,7 @@ public class BidListController {
 	public String deleteBid(@PathVariable("id") Integer id, Model model) {
 		try {
 			LOGGER.info("begin deleteBid");
-		// TODO: Find Bid by Id and delete the bid, return to Bid list
+
 		bidListService.deleteBidList(id);
 		return "redirect:/bidList/list";
 		} catch (Exception e) {

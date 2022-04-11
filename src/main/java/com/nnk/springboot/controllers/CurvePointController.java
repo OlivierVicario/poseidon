@@ -31,7 +31,7 @@ public class CurvePointController {
 	public String home(Model model) {
 		try {
 			LOGGER.info("begin home");
-			// TODO: find all Curve Point, add to model
+			
 			List<CurvePoint> CurvePoints = curvePointService.findAllCurvePoints();
 			model.addAttribute("curvePoints", CurvePoints);
 			return "curvePoint/list";
@@ -62,7 +62,7 @@ public class CurvePointController {
 
 		try {
 			LOGGER.info("begin validate");
-			// TODO: check data valid and save to db, after saving return Curve list
+			
 			if (result.hasErrors()) {
 				return "curvePoint/add";
 			} else {
@@ -81,7 +81,7 @@ public class CurvePointController {
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		try {
 			LOGGER.info("begin showUpdateForm");
-			// TODO: get CurvePoint by Id and to model then show to the form
+			
 			Optional<CurvePoint> optCurvePoint = curvePointService.getCurvePointById(id);
 			CurvePoint curvePoint = optCurvePoint.get();
 			model.addAttribute("curvePoint", curvePoint);
@@ -99,8 +99,8 @@ public class CurvePointController {
 			Model model) {
 		try {
 			LOGGER.info("begin updateCurvePoint");
-			// TODO: check required fields, if valid call service to update Curve and return
-			// Curve list
+			
+			
 			if (result.hasErrors()) {
 				return "curvePoint/update/{id}";
 			} else {
@@ -119,7 +119,7 @@ public class CurvePointController {
 	public String deleteCurvePoint(@PathVariable("id") Integer id, Model model) {
 		try {
 			LOGGER.info("begin deleteCurvePoint");
-			// TODO: Find Curve by Id and delete the Curve, return to Curve list
+			
 			curvePointService.deleteCurvePoint(id);
 			return "redirect:/curvePoint/list";
 		} catch (Exception e) {

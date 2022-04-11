@@ -1,40 +1,39 @@
 package com.nnk.springboot.controllers;
 
-import com.nnk.springboot.repositories.UserRepository;
-
 import javax.annotation.security.RolesAllowed;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.nnk.springboot.repositories.UserRepository;
+
 @Controller
-//@RequestMapping("app")
 public class LoginController {
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 	@Autowired
 	private UserRepository userRepository;
 
 	@GetMapping("login")
-	@RolesAllowed("USER")
-	public ModelAndView login() {
+	public String login() {
 		try {
 			LOGGER.info("begin login");
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("login");
-			return mav;
+			
+			
+	        return "login";
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage());
 		} finally {
 			LOGGER.info("end login");
 		}
-
 		return null;
 	}
+
 
 	@GetMapping("secure/article-details")
 	@RolesAllowed("ADMIN")
@@ -74,5 +73,17 @@ public class LoginController {
 		return null;
 	}
 	
-	
+	@GetMapping("logout")
+	public String logout() {
+		try {
+			LOGGER.info("begin logout");
+			SecurityContextHolder.getContext().setAuthentication(null);
+			return "login";
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+		} finally {
+			LOGGER.info("end logout");
+		}
+		return null;
+	}
 }

@@ -1,4 +1,4 @@
-package com.nnk.springboot;
+package com.nnk.springboot.domain;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
