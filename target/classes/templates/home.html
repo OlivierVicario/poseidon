@@ -30,11 +30,19 @@
 	</div>
 	<div class="row">
 		<div class="col-6 text-right">
-		</br>
+			</br>
 			<p>
- 				<a href="/login">Login</a> <!--or create one <a -->
-<!-- 					href="secure/article-details">User management</a> -->
+				<a href="/login">Login</a>
+				<!--or create one <a -->
+				<!-- 					href="secure/article-details">User management</a> -->
 			</p>
+<!-- 			<div sec:authentication="name"></div> -->
+<!-- 			<div sec:authentication="principal.authorities"></div> -->
+			</br>
+			<th:block sec:authorize="hasRole('ADMIN')">
+			<a href="/secure/article-details">Users management</a>
+			</th:block>
+
 		</div>
 	</div>
 </body>

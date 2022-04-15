@@ -9,11 +9,13 @@ com\nnk\springboot\domain\BidList.class
 com\nnk\springboot\controllers\LoginController.class
 com\nnk\springboot\service\MyUserDetailsService.class
 com\nnk\springboot\domain\Trade.class
+com\nnk\springboot\domain\PasswordValidator.class
 com\nnk\springboot\service\RatingService.class
 com\nnk\springboot\repositories\UserRepository.class
 com\nnk\springboot\controllers\UserController.class
 com\nnk\springboot\controllers\TradeController.class
 com\nnk\springboot\domain\RuleName.class
+com\nnk\springboot\domain\Password.class
 com\nnk\springboot\domain\CurvePoint.class
 com\nnk\springboot\controllers\HomeController.class
 com\nnk\springboot\domain\User.class
